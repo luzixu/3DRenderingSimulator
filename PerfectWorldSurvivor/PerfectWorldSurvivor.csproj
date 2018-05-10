@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A7CE561-0139-4601-A2F4-7B27B251AE9D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PerfectWorldSurvivor</RootNamespace>
+    <AssemblyName>PerfectWorkSurvivor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\MeshGenerator.cs" />
+    <Compile Include="Common\ObjLoader.cs" />
+    <Compile Include="Common\CharBuffer.cs" />
+    <Compile Include="Common\Texture.cs" />
+    <Compile Include="Draw\Batch.cs" />
+    <Compile Include="Draw\GameObject.cs" />
+    <Compile Include="Draw\RenderEngine.cs" />
+    <Compile Include="Draw\Transform.cs" />
+    <Compile Include="Draw\VertexShaderInput.cs" />
+    <Compile Include="Draw\VertexShaderOutput.cs" />
+    <Compile Include="Draw\World.cs" />
+    <Compile Include="Draw\WorldEventController.cs" />
+    <Compile Include="Model\Camera.cs" />
+    <Compile Include="Model\ClipTriangle.cs" />
+    <Compile Include="Model\Colorf.cs" />
+    <Compile Include="Model\CubicBound.cs" />
+    <Compile Include="Model\DirectionalLight.cs" />
+    <Compile Include="Model\Face.cs" />
+    <Compile Include="Model\Frustum.cs" />
+    <Compile Include="Model\Plane.cs" />
+    <Compile Include="Model\PointLight.cs" />
+    <Compile Include="Model\Lights.cs" />
+    <Compile Include="Model\Matrix4x4.cs" />
+    <Compile Include="Model\Mesh.cs" />
+    <Compile Include="Model\Quaternion.cs" />
+    <Compile Include="Model\Triangle.cs" />
+    <Compile Include="Model\Vector2d.cs" />
+    <Compile Include="Model\Vector3i.cs" />
+    <Compile Include="Model\Vector2f.cs" />
+    <Compile Include="Model\Vector2i.cs" />
+    <Compile Include="Model\Vector3f.cs" />
+    <Compile Include="Model\Vector4f.cs" />
+    <Compile Include="Sources\ObjSrc.cs" />
+    <Compile Include="Sources\TextureSrc.cs" />
+    <Compile Include="UI\DisplayEngine.cs" />
+    <Compile Include="UI\KeyMessageController.cs" />
+    <Compile Include="UI\InputKeys.cs" />
+    <Compile Include="Draw\Rasterization.cs" />
+    <Compile Include="MainWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWin.Designer.cs">
+      <DependentUpon>MainWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\LightsMath.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\NumberConverter.cs" />
+    <Compile Include="Utils\MathUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <EmbeddedResource Include="MainWin.resx">
+      <DependentUpon>MainWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
